@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% set header_title = "Вход" %}
+{% set header_subtitle = "Войдите для получения доступа к Вашим данным" %}
+{% block title %}Логин{% endblock title %}
+{% block content %}
+<form method="POST", action="{{url_for('login')}}">
+{{ form.csrf_token }}
+<div class="form-group">
+<label for="title">Имя:</label>
+{{form.name}} <br>
+</div>
+<div class="form-group">
+<label for="title">Пароль:</label>
+{{form.password}} <br>
+</div>
+<button type="submit" class="btn btn-primary">Вход</button>
+</form>
+{% endblock content %}

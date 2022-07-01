@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% set header_title = "Вход" %}
+{% set header_subtitle = "Вход в раздел администратора" %}
+{% set page_title = "Вход" %}
+{% set page_subtitle = "Вход в раздел администратора" %}
+{% block title %}Регистрация{% endblock title %}
+{% block content %}
+  <h1>Регистрация</h1>
+<form method="POST", action="{{url_for('register')}}">
+{{ form.csrf_token }}
+Имя: {{form.name}} <br>
+Пароль: {{form.password}} <br>
+Повторите пароль: {{form.password_rep}} <br>
+<input type="submit", value="Регистрация">
+</form>
+{% endblock content %}
