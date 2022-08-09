@@ -1,10 +1,24 @@
 {% extends "base.html" %}
-{% set header_title = "О нас" %}
-{% set header_subtitle = "и о нашей деятельности" %}
+{% set background_image='/static/assets/img/about-bg.jpg' %}
+{% set header_title = "Сервис сокращения ссылок" %}
+{% set header_subtitle = "предлагает" %}
 {% set page_title = "О сайте" %}
 {% set page_subtitle = "Описание этого проекта" %}
-{% block title %}Страничка о сайте{% endblock title %}
+{% block title %}о сайте{% endblock title %}
 {% block content %}
-  <h1>О сайте</h1>
-  <p>Текст с описанием этого сайта</p>
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!--
+            <div class="alert alert-danger" role="alert">
+            Этот сайт -- учебный, он может работать неправильно и будет закрыт.
+            </div>
+            -->
+            <p>-- короткие ссылки -- бесплатно
+            <p>-- возможность редактирования коротких ссылкок
+            <p>-- информация о количестве переходов по ссылке
+            <p>-- регистрируйтесь для доступа к сервису
+        </div>
+    </div>
+</div>
 {% endblock content %}

@@ -1,4 +1,4 @@
-flask
-Flask-WTF
-bcrypt
-basen-encoder
+Flask==2.1.2
+Flask-WTF==1.0.1
+bcrypt==3.2.2
+basen-encoder==0.0.4

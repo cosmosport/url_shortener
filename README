@@ -1,0 +1,62 @@
+[En]
+Link shortening service
+
+The project was made as part of the Python tutorial https://pylot.me/
+
+
+Installation (Linux):
+
+ - in the top directory where the Makefile is located, on the command line
+   run the "make setup" command.
+   
+ - make init -- create a database.
+
+
+Launch:
+
+ - start in release mode: make run.
+ - run in development mode: make dev.
+
+
+Settings:
+
+The settings.ini file is located in the "url_shortener" folder
+
+ - APP_BASE is the actual URL of the application running on the server.
+   If APP_BASE is incorrect, the application will not be able to redirect
+   with a short link.
+
+ - X-KEY, secret_key -- application secret keys, should be replaced with
+   secret.
+
+
+Сервис сокращения ссылок
+
+Проект выполнен в рамках учебного курса Python https://pylot.me/
+
+
+[Ru]
+Установка (Linux):
+
+ - в верхней директории, где находится файл Makefile, в коммандной строке
+   выполните комманду "make setup".
+
+ - make init -- создание базы данных.
+
+
+Запуск:
+
+ - запуск в рабочем режиме: make run.
+ - запуск в режиме разработки: make dev.
+
+
+Настройки:
+
+Файл настроек settings.ini расположен в папке "url_shortener"
+
+ - APP_BASE -- действительный URL приложения, запущенного на сервере.
+   Если APP_BASE указан неверно -- приложение не сможет перенаправить
+   по короткой ссылке.
+
+ - X-KEY, secret_key -- секретные ключи приложения, нужно заменить на
+   секретные.

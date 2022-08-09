@@ -16,3 +16,6 @@ dev:
 
 run:
 	cd url_shortener && FLASK_APP=app FLASK_ENV=production python -m flask run 
+
+sql:
+	cd url_shortener && sqlite3 url_shortener.sqlite

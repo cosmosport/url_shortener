@@ -1,18 +1,23 @@
 {% extends "base.html" %}
+{% set background_image='/static/assets/img/post-bg.jpg' %}
 {% set header_title = "Вход" %}
 {% set header_subtitle = "Войдите для получения доступа к Вашим данным" %}
 {% block title %}Логин{% endblock title %}
 {% block content %}
-<form method="POST", action="{{url_for('login')}}">
-{{ form.csrf_token }}
-<div class="form-group">
-<label for="title">Имя:</label>
-{{form.name}} <br>
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <form method="POST", action="{{url_for('login')}}">
+            {{ form.csrf_token }}
+            <div class="form-group">
+            {{form.name.label}}{{form.name}} 
+            </div>
+            <div class="form-group">
+            {{form.password.label}}{{form.password}}
+            </div>
+            <p><button type="submit" class="btn btn-primary">Вход</button>
+            </form>
+        </div>
+    </div>
 </div>
-<div class="form-group">
-<label for="title">Пароль:</label>
-{{form.password}} <br>
-</div>
-<button type="submit" class="btn btn-primary">Вход</button>
-</form>
 {% endblock content %}

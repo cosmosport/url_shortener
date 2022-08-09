@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% set background_image='/static/assets/img/home-bg.jpg' %}
+{% set header_title = "Таблица ссылок" %}
+{% set header_subtitle = "" %}
+{% block title %}Таблица ссылок{% endblock title %}
+{% block content %}
+   <h4><a href="{{url_for('linknew')}}" class="btn btn-primary">Добавить URL</a></h4>
+   <div class="table-responsive-sm">
+      <table class="table table-bordered">
+         <thead>
+            <tr>
+               <th>№</th>
+               <th>Исходный URL</th>
+               <th>Короткая ссылка</th>
+               <th>Переходов</th>
+               <th><a href="{{url_for('linknew')}}"> <img src="static/assets/icons/new_tiny.png" title="Добавить ссылку"/></a></th>
+               <th></th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for row in rows %}
+            <tr>
+               <td align="right"><a href="{{url_for('linkedit', link_id=row.id)}}"> {{row.num}} </a></td>
+               <td>{{row.source_link}}</td>
+               <td>{{row.short_link}}</td>
+               <td align="right">{{row.redirect_cnt}}</td>
+               <td><a href="{{url_for('linkedit', link_id=row.link_id)}}"> <img src="static/assets/icons/edit_tiny.png" title="Редактировать"/></a></td>
+               <td><a href="{{url_for('link_delete', link_id=row.link_id)}}"> <img src="static/assets/icons/delete_tiny.png" title="Удалить"/></a></td>
+            </tr>   
+            {% endfor %}
+      </table>
+   </div>
+{% endblock content %}

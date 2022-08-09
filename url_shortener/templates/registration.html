@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% set background_image='/static/assets/img/post-bg.jpg' %}
-{% block title %}Редактировать {% endblock title %}
+{% set header_title = "Регистрация" %}
+{% set header_subtitle = "Регистрация на сайте" %}
+{% set page_title = "Регистрация" %}
+{% set page_subtitle = "Регистрация на сайте" %}
+{% block title %}{% endblock title %}
 {% block content %}
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
-            <form method="POST">
-            {{ form.csrf_token }}
+			<form method="POST" action="{{url_for('registration')}}">
+			{{ form.csrf_token }}
 			{% for field in form if field.name not in ['csrf_token', 'submit'] %}
 				<div class="form-group">
 					{{ field.label() }} 
@@ -22,8 +26,8 @@
 					{% endif %}
 				</div>
 			{% endfor %}
-            <p><button type="submit" class="btn btn-primary">Сохранить</button>
-            </form>
+			<p><button type="submit" class="btn btn-primary">Регистрация</button>
+			</form>
         </div>
     </div>
 </div>
