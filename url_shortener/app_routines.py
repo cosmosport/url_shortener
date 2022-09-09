@@ -32,8 +32,8 @@ def num_from_str(link: str) -> int:
         # 9223372036854775807 is the max value of int for sqlite3 (2^63-1)
         if n <= 9223372036854775807:
             return n
-    else:
         return 0
+    return 0
 
 
 def id_from_short_link(link: str) -> int:
@@ -77,8 +77,7 @@ def short_link_from_id(id: int) -> str:
         db_row = db().execute("SELECT id FROM links WHERE id=?", (id,)).fetchone()
         if db_row:
             return out_id
-        else:
-            return ""
+        return ""
 
 
 def id_from_source_link(source_link: str) -> int:
@@ -90,8 +89,7 @@ def id_from_source_link(source_link: str) -> int:
     )
     if db_row:
         return int(db_row["id"])
-    else:
-        return 0
+    return 0
 
 
 def custom_short_link(link_id) -> str:
@@ -102,8 +100,7 @@ def custom_short_link(link_id) -> str:
     )
     if db_row:
         return db_row["short_link"]
-    else:
-        return ""
+    return ""
 
 
 def update_custom_short_link(link_id, value: str):
@@ -124,13 +121,12 @@ def insert_custom_short_link(link_id, value: str):
 def source_link(link_id):
     db_row = (
         db()
-        .execute(f"SELECT link as source_link FROM links WHERE links.id=?", (link_id,))
+        .execute("SELECT link as source_link FROM links WHERE links.id=?", (link_id,))
         .fetchone()
     )
     if db_row:
         return db_row["source_link"]
-    else:
-        return ""
+    return ""
 
 
 def update_source_link(link_id, value: str):
@@ -147,8 +143,7 @@ def user_id_from_name(user_name: str) -> int:
     db_row = db().execute("SELECT id FROM users WHERE name=?", (user_name,)).fetchone()
     if db_row:
         return int(db_row["id"])
-    else:
-        return 0
+    return 0
 
 
 def insert_source_link(user_id, value: str):

@@ -1,5 +1,3 @@
-from distutils.command.config import config
-from flask import g
 from flask_wtf import FlaskForm
 from wtforms import (
     StringField,
@@ -8,8 +6,7 @@ from wtforms import (
     TextAreaField,
     ValidationError,
 )
-from wtforms.validators import DataRequired, Email, Length, EqualTo
-import re
+from wtforms.validators import Length, EqualTo
 from app_routines import config
 
 
